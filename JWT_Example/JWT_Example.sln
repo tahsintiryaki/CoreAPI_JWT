@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.31025.194
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JWT_Example", "JWT_Example\JWT_Example.csproj", "{10486C6D-FC8E-4E5C-977F-51DC1106E2D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JWT_Example.Web", "JWT_Example.Web\JWT_Example.Web.csproj", "{8C55A011-B4A6-44A2-AA9E-3FF5A43F65DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JWT_Example.Contract", "JWT_Example.Contract\JWT_Example.Contract.csproj", "{2B00523E-BE92-4A35-BE82-CE489B110811}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{10486C6D-FC8E-4E5C-977F-51DC1106E2D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10486C6D-FC8E-4E5C-977F-51DC1106E2D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10486C6D-FC8E-4E5C-977F-51DC1106E2D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C55A011-B4A6-44A2-AA9E-3FF5A43F65DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C55A011-B4A6-44A2-AA9E-3FF5A43F65DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C55A011-B4A6-44A2-AA9E-3FF5A43F65DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C55A011-B4A6-44A2-AA9E-3FF5A43F65DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B00523E-BE92-4A35-BE82-CE489B110811}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B00523E-BE92-4A35-BE82-CE489B110811}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B00523E-BE92-4A35-BE82-CE489B110811}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B00523E-BE92-4A35-BE82-CE489B110811}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 
 namespace JWT_Example
 {
@@ -51,7 +52,7 @@ namespace JWT_Example
 
 
             services.AddDbContext<AppDbContext>(x => x.UseSqlServer("Server=.;Database=JwtTokenExampleDb;Trusted_Connection=true"));
-
+            services.AddAutoMapper(typeof(Startup));
             services.AddControllers();
         }
 

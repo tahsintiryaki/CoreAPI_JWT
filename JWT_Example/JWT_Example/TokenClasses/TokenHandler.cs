@@ -51,15 +51,15 @@ namespace JWT_Example.TokenClasses
         }
 
         //Refresh Token üretecek metot.
-        public string CreateRefreshToken()
+    public string CreateRefreshToken()
+    {
+        byte[] number = new byte[32];
+        using (RandomNumberGenerator random = RandomNumberGenerator.Create())
         {
-            byte[] number = new byte[32];
-            using (RandomNumberGenerator random = RandomNumberGenerator.Create())
-            {
-                random.GetBytes(number);
-                return Convert.ToBase64String(number);
-            }
+            random.GetBytes(number);
+            return Convert.ToBase64String(number);
         }
+    }
 
     }
 }
