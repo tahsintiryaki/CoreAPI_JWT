@@ -48,7 +48,7 @@ namespace JWT_Example.Controllers
 
 
         [HttpPost("[action]")]
-        public async Task<Token> Login([FromForm] UserRequestModel userLogin)
+        public async Task<Token> Login(UserRequestModel userLogin)
         {
             User user = _context.User.Where(x => x.Email == userLogin.Email && x.Password == userLogin.Password).FirstOrDefault();
             if (user != null)

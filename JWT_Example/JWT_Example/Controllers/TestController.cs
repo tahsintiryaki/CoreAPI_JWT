@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using JWT_Example.Contract.ResponseModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -13,9 +14,15 @@ namespace JWT_Example.Controllers
     [ApiController]
     public class TestController : ControllerBase
     {
-        public string Index()
+        public async Task<ApiResponse> Index()
         {
-            return "Yetkilendirme başarılı...";
+            ApiResponse response = new ApiResponse()
+            {
+                Message = "Yetkilendirme başarılı...",
+                Code = "201"
+            };
+            
+            return response;
         }
     }
 }
