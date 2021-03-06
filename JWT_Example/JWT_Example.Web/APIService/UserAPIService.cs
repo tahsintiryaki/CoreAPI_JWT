@@ -74,7 +74,7 @@ namespace JWT_Example.Web.APIService
             {
                 result.Message = "işlem başarısız";
             }
-            return result;
+            return result.Message;
         }
     }
 }
