@@ -35,37 +35,36 @@ namespace JWT_Example.Web.APIService
         }
         public async Task<string> GotoView()
         {
+            var result = new ApiResponse();
             UserRequestModel model = new UserRequestModel()
             {
                 Email = "t@2t.com",
                 Password = "1234"
             };
+            //Metoda parametre ile gitme, Encoding ve format belirtmeyi unutma!!
             var stringContent = new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(model), Encoding.UTF8, "application/json");
-            
             var response = await _httpClient.PostAsync("login/login", stringContent);
             if (response.IsSuccessStatusCode)
             {
                 var token = JsonConvert.DeserializeObject<TokenResponseModel>(await response.Content.ReadAsStringAsync());
 
-                if(token!=null)
+                if (token != null)
                 {
-                    AuthRequestModel auth = new AuthRequestModel()
-                    {
-                        BearerToken = $"Bearer {token.AccessToken}"
-                    };
-                    var stringContent2 = new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(auth), Encoding.UTF8, "application/json");
 
+
+                    //metoda token ile gitme.
                     _httpClient.DefaultRequestHeaders.Authorization
                              = new AuthenticationHeaderValue("Bearer", token.AccessToken);
                 }
-               
+
                 var response2 = await _httpClient.GetAsync("test");
-                var result = new ApiResponse();
-                if(response2.IsSuccessStatusCode)
+
+                if (response2.IsSuccessStatusCode)
                 {
 
-                 result = JsonConvert.DeserializeObject<ApiResponse>(await response2.Content.ReadAsStringAsync());
-                }else
+                    result = JsonConvert.DeserializeObject<ApiResponse>(await response2.Content.ReadAsStringAsync());
+                }
+                else
                 {
                     result.Message = "Yetkiniz bulunmamaktadır, Token başarısız";
                 }
@@ -73,9 +72,9 @@ namespace JWT_Example.Web.APIService
             }
             else
             {
-                
+                result.Message = "işlem başarısız";
             }
-            return "success";
+            return result;
         }
     }
 }
